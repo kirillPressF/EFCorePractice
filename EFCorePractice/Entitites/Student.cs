@@ -14,4 +14,4 @@ namespace EFCorePractice.Entitites
             FavoriteCourse = favoriteCourse;
         }
     }
-}
+} 
