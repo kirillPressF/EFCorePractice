@@ -8,7 +8,7 @@ namespace EFCorePractice.Entitites
         public Course? FavoriteCourse { get; set; }
         public List<Enrollment> Enrollments { get; set; } = [];
         private Student() { }
-        private Student(Name name, Course? favoriteCourse)
+        public Student(Name name, Course? favoriteCourse)
         {
             Name = name;
             FavoriteCourse = favoriteCourse;

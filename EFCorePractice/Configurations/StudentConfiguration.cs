@@ -13,7 +13,7 @@ namespace EFCorePractice.Configurations
             studentBuilder.Property(student => student.Id).HasColumnName("StudentID");
             studentBuilder.ComplexProperty(student => student.Name, nameBuilder =>
             {
-                nameBuilder.Property(name => name.FirstName).HasColumnName("Firstname").HasMaxLength(100);
+                nameBuilder.Property(name => name.FirstName).HasColumnName("Firstname").HasMaxLength(150);
                 nameBuilder.Property(name => name.LastName).HasColumnName("Lastname").HasMaxLength(100);
             });
             studentBuilder.HasOne(student => student.FavoriteCourse)

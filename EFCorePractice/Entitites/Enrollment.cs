@@ -8,11 +8,11 @@ namespace EFCorePractice.Entitites
         public Course Course { get; set; } = null!;
         public Student Student { get; set; } = null!;
         private Enrollment() { }
-        private Enrollment(long id, Grade grade, Course course, Student student) : base(id)
+        public Enrollment(Course course, Student student, Grade grade)
         {
-            Grade = grade;
             Course = course;
             Student = student;
+            Grade = grade;
         }
     }
 }

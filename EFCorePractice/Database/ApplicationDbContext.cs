@@ -10,6 +10,9 @@ namespace EFCorePractice.Database
         {
             _configuration = configuration;
         }
+
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
@@ -27,6 +30,8 @@ namespace EFCorePractice.Database
                 courseBuilder.ToTable("Courses").HasKey(course => course.Id);
                 courseBuilder.Property(course => course.Id).HasColumnName("CourseID");
                 courseBuilder.Property(course => course.Name).HasColumnName("Name").HasMaxLength(100);
+
+                courseBuilder.HasData(Course.Math, Course.Chemistry);
             });
 
             modelBuilder.Entity<Enrollment>(enrollmentBuilder =>
